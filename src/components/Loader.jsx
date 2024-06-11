@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react';
 
-export default function Loader() {
+function Loader() {
     return (
         <div>Loader</div>
     )
 }
+
+export default memo(Loader);
