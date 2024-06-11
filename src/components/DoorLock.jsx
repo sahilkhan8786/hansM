@@ -8,8 +8,8 @@ export default function DoorLock() {
 
     return (
         <Canvas className="w-full h-full flex items-center justify-center bg-red-300">
-            <pointLight intensity={2} position={[0, 0, 1]} />
-            <ambientLight intensity={5} />
+            <pointLight intensity={1} position={[0, 0, 1]} />
+            <ambientLight intensity={2.5} />
             <mesh>
                 <primitive object={model.scene} ref={ref} />
             </mesh>
