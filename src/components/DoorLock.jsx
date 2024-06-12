@@ -16,7 +16,7 @@ export default function DoorLock() {
                 <Model scale={[2.5, 2.5, 2.5]} />
                 <Html position={[1, 1, 1]}>
                     <span className='bg-white '>
-                        Hello&nbsp;world
+                        Hello world
                     </span>
                 </Html>
             </Suspense>
