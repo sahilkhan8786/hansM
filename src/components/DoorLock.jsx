@@ -4,7 +4,7 @@ import scene from '../assets/scene_door-lock.glb'
 import { Canvas } from '@react-three/fiber';
 export default function DoorLock() {
     const ref = useRef();
-    const model = useGLTF(scene, '/dracp-gltf/');
+    const model = useGLTF(scene, true);
 
     return (
         <Canvas className="w-full h-full flex items-center justify-center bg-red-300">
