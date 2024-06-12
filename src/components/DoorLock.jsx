@@ -1,19 +1,28 @@
-import { useGLTF } from '@react-three/drei';
-import React, { useRef } from 'react'
-import scene from '../assets/scene_door-lock.glb'
+import { Html, OrbitControls, Text } from '@react-three/drei';
+import React, { lazy, Suspense } from 'react'
+
 import { Canvas } from '@react-three/fiber';
+const Model = lazy(() => import('./Model'))
 export default function DoorLock() {
-    const ref = useRef();
-    const model = useGLTF(scene, true);
+
 
     return (
         <Canvas className="w-full h-full flex items-center justify-center bg-red-300">
-            <pointLight intensity={1} position={[0, 0, 1]} />
-            <ambientLight intensity={2.5} />
-            <mesh>
-                <primitive object={model.scene} ref={ref} />
-            </mesh>
+
+            <Suspense fallback={<Html><span>Loading Model...</span></Html>}>
+
+                {/* Directional light */}
+                <directionalLight intensity={2.5} position={[0, 5, 5]} />
+                <Model scale={[2.5, 2.5, 2.5]} />
+                <Html position={[1, 1, 1]}>
+                    <span className='bg-white '>
+                        Hello&nbsp;world
+                    </span>
+                </Html>
+            </Suspense>
+            <OrbitControls />
         </Canvas>
 
     )
 }
+
