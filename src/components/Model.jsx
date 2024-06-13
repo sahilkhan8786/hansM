@@ -43,13 +43,10 @@ export default function Model({ setText, setPosition, ...props }) {
                 break;
 
         }
-
-
-        console.log(e.object.name)
     }
 
     const ref = useRef();
-    const { nodes, materials } = useGLTF(scene);
+    const { nodes, materials } = useGLTF(scene, true);
 
     // const modelPosti
 

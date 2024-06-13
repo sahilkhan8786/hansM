@@ -32,8 +32,8 @@ export default function DoorLock({ setText }) {
                 {/* Directional light */}
                 <directionalLight intensity={2.5} position={[0, 5, 5]} />
                 <Model scale={scale} setText={setText} />
+                <OrbitControls enablePan={false} />
             </Suspense>
-            <OrbitControls enablePan={false} />
         </Canvas >
 
     )
